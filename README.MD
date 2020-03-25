@@ -14,7 +14,7 @@ Crie o arquivo .env conforme modelo abaixo
     POSTGRES_USER=truckpad_user
     POSTGRES_PASSWORD=truckpad_pwd
     POSTGRES_DB=truckpad
-    POSTGRES_HOST=10.0.2.15
+    POSTGRES_HOST=db
     POSTGRES_PORT=5432
     DATABASE=postgres
     PYTHONPATH=truckpad
