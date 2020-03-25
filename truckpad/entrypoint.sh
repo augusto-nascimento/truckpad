@@ -11,7 +11,6 @@ then
     echo "PostgreSQL started"
 fi
 
-pipenv run /usr/src/truckpad/manage.py flush --no-input
 pipenv run /usr/src/truckpad/manage.py migrate
 
 exec "$@"

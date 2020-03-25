@@ -14,7 +14,6 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 # django imports
-from django.conf.urls import url
 from django.urls import include, path
 
 
@@ -22,11 +21,15 @@ from django.urls import include, path
 from rest_framework import routers
 
 # project imports
-from nucleo.views import MotoristaList
+from nucleo.views import (
+    MotoristaList, VeiculoList, TerminalVeiculoList
+)
 
 
 router = routers.DefaultRouter()
 router.register(r'motorista', MotoristaList)
+router.register(r'veiculo', VeiculoList)
+router.register(r'terminal_veiculo', TerminalVeiculoList)
 
 urlpatterns = [
     path('', include(router.urls)),
