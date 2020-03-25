@@ -22,7 +22,7 @@ RUN pipenv install
 # copy entrypoint.sh
 COPY ./entrypoint.sh /usr/src/truckpad/entrypoint.sh
 
-# copy project
+# copy projectgit
 COPY . /usr/src/truckpad/
 
 # run entrypoint.sh

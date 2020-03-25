@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     build: ./truckpad
-    command: pipenv run /usr/src/truckpad/manage.py runserver 10.0.2.4:8000
+    command: pipenv run /usr/src/truckpad/manage.py runserver 0.0.0.0:8000
     volumes:
       - ./truckpad/:/usr/src/truckpad/
     ports:

@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/augusto/.local/share/virtualenvs/truckpad-SDmabNTW/bin/python",
+    "python.pythonPath": "/home/augusto/.local/share/virtualenvs/truckpad-jDCCFj-b/bin/activate",
     "python.linting.mypyEnabled": true,
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true
