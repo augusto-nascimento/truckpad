@@ -1,17 +1,17 @@
 version: '3'
 
 services:
-  # web:
-  #   build: ./app
-  #   command: python manage.py runserver 0.0.0.0:8000
-  #   volumes:
-  #     - ./app/:/usr/src/app/
-  #   ports:
-  #     - 8000:8000
-  #   env_file:
-  #     - ./.env.dev
-  #   depends_on:
-  #     - db
+  web:
+    build: ./truckpad
+    command: pipenv run /usr/src/truckpad/manage.py runserver 10.0.2.4:8000
+    volumes:
+      - ./truckpad/:/usr/src/truckpad/
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env
+    depends_on:
+      - db
   db:
     build: database/.
     volumes:
