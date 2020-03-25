@@ -42,6 +42,9 @@ class Motorista(models.Model):
         null=True
     )
 
+    def __str__(self):
+        return self.nome
+
 
 class Veiculo(models.Model):
     motorista = models.ForeignKey(
@@ -57,6 +60,9 @@ class Veiculo(models.Model):
     )
     proprietario = models.BooleanField(blank=True, null=True)
 
+    def __str__(self):
+        return self.placa
+
 
 class VeiculoTipo(models.Model):
     descricao = models.CharField(max_length=50)
@@ -65,6 +71,9 @@ class VeiculoTipo(models.Model):
 class Terminal(models.Model):
     nome = models.CharField(max_length=50)
     localizacao = PointField()
+
+    def __str__(self):
+        return self.nome
 
 
 class TerminalVeiculo(models.Model):
@@ -75,3 +84,6 @@ class TerminalVeiculo(models.Model):
     destino = PointField()
     terminal = models.ForeignKey(Terminal, on_delete=models.PROTECT)
     veiculo = models.ForeignKey(Veiculo, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return '%s: %s - %s' % (self.veiculo.placa, self.entrada, self.saida)
