@@ -16,18 +16,18 @@ class MotoristaList(ModelViewSet):
 
     queryset = Motorista.objects.all()
     serializer_class = MotoristaSerializer
-    http_method_names = ['get', 'post']
+    http_method_names = ['get', 'post', 'put']
 
 
 class VeiculoList(ModelViewSet):
 
     queryset = Veiculo.objects.all()
     serializer_class = VeiculoSerializer
-    http_method_names = ['get', 'post']
+    http_method_names = ['get', 'post', 'put']
 
 
 class TerminalVeiculoList(ModelViewSet):
 
     queryset = TerminalVeiculo.objects.all()
     serializer_class = TerminalVeiculoSerializer
-    http_method_names = ['get', 'post']
+    http_method_names = ['get', 'post', 'put']

@@ -46,6 +46,7 @@ class Migration(migrations.Migration):
                 ('placa', models.CharField(db_index=True, max_length=7, validators=[nucleo.models.validar_placa])),
                 ('proprietario', models.BooleanField(blank=True, null=True)),
                 ('motorista', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='nucleo.Motorista')),
+                ('tipo', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, to='nucleo.VeiculoTipo')),
             ],
         ),
         migrations.CreateModel(

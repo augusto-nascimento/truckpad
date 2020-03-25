@@ -46,6 +46,10 @@ class Motorista(models.Model):
         return self.nome
 
 
+class VeiculoTipo(models.Model):
+    descricao = models.CharField(max_length=50)
+
+
 class Veiculo(models.Model):
     motorista = models.ForeignKey(
         Motorista,
@@ -59,13 +63,13 @@ class Veiculo(models.Model):
         validators=[validar_placa]
     )
     proprietario = models.BooleanField(blank=True, null=True)
+    tipo = models.ForeignKey(
+        VeiculoTipo,
+        on_delete=models.PROTECT
+    )
 
     def __str__(self):
         return self.placa
-
-
-class VeiculoTipo(models.Model):
-    descricao = models.CharField(max_length=50)
 
 
 class Terminal(models.Model):
